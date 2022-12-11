@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>About me</title>
+  <link rel="stylesheet" href="css/wdt_styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+  <!-- Load in jquery scripts below here -->
+</head>
+<nav id="navbar" class="navbar navbar-expand-lg
+  position-fixed w-100 fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#home",></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle
+  navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <button class="btn btn-wdt" href="#personal">Dashboard</button>
+          </li>
+          <li class="nav-item">
+            <div class="dropdown">
+              <button class="btn btn-wdt dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Inventory
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Search</a></li>
+                <li><a class="dropdown-item" href="#">Add</a></li>
+                <li><a class="dropdown-item" href="#">Remove</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <div class="dropdown">
+              <button class="btn btn-wdt dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Orders
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Search</a></li>
+                <li><a class="dropdown-item" href="#">Add</a></li>
+                <li><a class="dropdown-item" href="#">Remove</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <br>
+  <br>
+
+  <div>
+    <header id="home">
+      <img src="logos/wdt_logo.png" alt="WDT Logo" width="300" height="77">
+      <div class="container text-center">
+        <section id="personal">
+            <div class="container-fluid header-content">
+                <div class="table-responsive-xxl">
+                  <h1>Reception Management Dashboard</h1>
+                  <table class="table table" id="personalTable">
+                    <thead>
+                      <th scope="col">Picture</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Surname</th>
+                      <th scope="col">Email Adress</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Out Time</th>
+                      <th scope="col">Duration</th>
+                      <th scope="col">Expected Return Time</th>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="btn-group" role="group" aria-label="Buttons for registering employees absence or work time">
+                  <button type="button" onclick="staffOut()" class="btn btn-danger">Clock Out</button>
+                  <button type="button" onclick="staffIn()" class="btn btn-success">Clock In
+                  </button>
+                </div>
+              </div>
+          </section>
+
+        <section id="scheduler">
+          <div class="container-fluid header-content">
+              <div class="table-responsive-xxl">
+                <h1>Schedule Delivery</h1>
+                <table class="table" id="scheduleTable">
+                    <thead>
+                      <th scope="col">Vehicle:</th>
+                      <th scope="col">Name:</th>
+                      <th scope="col">Surname:</th>
+                      <th scope="col">Telephone:</th>
+                      <th scope="col">Address:</th>
+                      <th scope="col">Return Time:</th>
+                    </tr>
+                    <tbody>
+                    <td contenteditable='true', id="sd-vh"></td>
+                    <td contenteditable='true', id="sd-na"></td>
+                    <td contenteditable='true', id="sd-sn"></td>
+                    <td contenteditable='true', id="sd-tp"></td>
+                    <td contenteditable='true', id="sd-ad"></td>
+                    <td contenteditable='true', id="sd-rt"></td>
+                    </tbody>
+                </table>
+            </div>
+              <div class="btn-group" role="group" aria-label="Buttons for registering employees absence or work time">
+                <button type="button" onclick="scheduleDelivery()" class="btn btn-success">Add Delivery</button>
+              </div>
+        </section>
+          <section id="deliveries">
+            <div class="container-fluid header-content">
+                <div class="table-responsive-xxl">
+                  <h1>Delivery Board</h1>
+                  <table class="table" id="deliveryTable">
+                      <thead>
+                        <th scope="col">Vehicle</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Surname</th>
+                        <th scope="col">Telephone</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Return Time</th>
+                      </tr>
+                      </tbody>
+                  </table>
+              </div>
+                <div class="btn-group" role="group" aria-label="Buttons for registering employees absence or work time">
+                  <button type="button" onclick="clearDeliveries()" class="btn btn-danger">Clear Table</button>
+                </div>
+          </section>
+
+          <section id="digitalClock">
+            <div class="container-fluid header-content">
+                <div class="table-responsive-xxl">
+                  <div id = "digital-clock" style="font-size: 50px;"></div>
+              </div>
+          </section>
+    </header>
+  </div>
+  <script src="./js/wdt_app.js"></script>
+</body>
+
+
+</html>

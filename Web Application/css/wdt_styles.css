@@ -1,0 +1,58 @@
+.table {
+    border: 1px solid;
+    border-color: #212529 !important;
+    border-radius: 15px 50px 30px 5px !important;
+}
+
+
+.table th{
+    font-family: "Consolas";
+    color: white;
+    background-color: #0E8EA8 !important; 
+  }
+
+.table tr{
+    background-color: #83D1E1;
+    border-bottom-width: 1px !important;
+    color: #212529 !important;
+    font-family: "Calibri";
+}
+
+tr:hover{
+    background-color:#26626e !important;
+}
+
+
+.dropdown-menu {
+    background-color: #83D1E1 !important;
+    font-family: "Consolas";
+}
+
+.dropdown-item {
+    color: #212529 !important;
+}
+
+.btn-wdt {
+    background-color: #0E8EA8 !important;
+    color: #fff !important;
+    font-family: "Consolas" !important;
+}
+
+.btn-success {
+    background-color: #198754 !important;
+    font-family: "Consolas" !important;
+}
+
+.btn-danger {
+    background-color: #dc3545 !important;
+    font-family: "Consolas" !important;
+}
+
+.nav-link {
+    background-color: #0E8EA8 !important;
+    color: #fff !important;
+}
+
+/* WDT did not want this, only showed it in the mockup */
+/* .table tr:nth-child(even){background-color: #a3e0ec;} */
+  
